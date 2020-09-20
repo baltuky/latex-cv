@@ -5,4 +5,11 @@ before_install:
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
-
+deploy:
+  provider: releases
+  api_key: $GH_TOKEN
+  file:
+  - _build/cv.pdf
+  skip_cleanup: true
+  on:
+    tags: true
