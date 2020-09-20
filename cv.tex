@@ -1,0 +1,204 @@
+%-------------------------
+% Resume in Latex
+% Author : Yauheni Baltukha
+% Based off of: https://github.com/baltuky/latex-cv
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+%\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Yauheni Baltukha} \\ \vspace{1pt}
+    \small \href{mailto:evgenii.boltuho@gmail.com}{\underline{evgenii.boltuho@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/baltuky}{\underline{linkedin.com/in/baltuky}} $|$
+    \href{https://github.com/baltuky}{\underline{github.com/baltuky}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+\justify
+I have over 7 years of experience as a software engineer, and have worked at both small and large companies. While I'm a data engineer, my expertise is in building scalable and reliable back-end services (API services, data pipelines).
+I love building things. While hard engineering problems are often intrinsically fun to tackle.
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Senior SWE}{Nov 2019 -- Present}
+      {Lyft}{Minsk}
+      \resumeItemListStart
+        \resumeItem{Implemented multi-versioning Protobuf schema support for Apache Flink consumer applications.}
+        \resumeItem{Designed and developed a CLI tool to manage data pipelines.}
+        \resumeItem{Designed a service to materialize collected on S3 data into Presto tables.}
+        \resumeItem{Helm charts for Presto as well as for the Hive Metastore components.}
+      \resumeItemListEnd
+      
+      \resumeSubheading
+      {Senior SWE}{Jul 2019 -- Nov 2019}
+      {Juno}{Minsk}
+      \resumeItemListStart
+        \resumeItem{Designed and developed Flink's source/sink components to backup Apache Kafka data on a remote file system.}
+        \resumeItem{Developed Flink's Kudu sink to support writing data into Kudu.}
+        \resumeItem{Apache Airflow pipelines to periodically backup Kudu databases.}
+        \resumeItem{Kudu Flink Catalog to make data accessible from the Flink's Table API.}
+      \resumeItemListEnd
+      
+      \resumeSubheading
+      {Senior SWE}{Nov 2015 -- May 2019}	
+      {EPAM Systems}{Minsk}
+      \resumeItemListStart
+        \resumeItem{Designing and developing batch/streaming Spark applications in Scala to process lithography data.}
+        \resumeItem{Creating Kibana dashboards to help processing engineers improve manufacturing cycle.}
+        \resumeItem{Working closely with data analyst/process engineers to gather and analyze requirements.}
+        \resumeItem{Mentoring and developing junior and mid-level software engineers.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+     \resumeProjectHeading
+          {\textbf{Data collection platform for events analytics} $|$ \emph{Scala, Flink, K8s, AWS, Presto}}{May 2020 -- Present}
+          \resumeItemListStart
+            \resumeItem{Designed and developed a Flink service to consume and store analytics events.}
+            \resumeItem{Explored a ways to make data materialization into Presto tables along with managing schemas of Presto tables.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Data Analytics Platform} $|$ \emph{Scala, Spark, Kafka, ELK, AWS}}{Sep 2018 -- Mar 2019}
+          \resumeItemListStart
+            \resumeItem{Created a set of Kibana dashboards to visualize lithography logs.}
+            \resumeItem{Develop Spark batch/streaming application to process lithography logs and load them to ElasticSearch.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Hotel loyalty system} $|$ \emph{Java, Oracle, Spring Framework, GWT}}{Nov 2015 -- Sep 2017}
+          \resumeItemListStart
+            \resumeItem{Designed and developed a service to process and manage promo codes.}
+            \resumeItem{Integrated GWT UI application with server-side to manage promo codes.}
+            \resumeItem{Developed load-tests using Gatling.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Scala} \\
+     \textbf{Technologies}{: Apache Spark, Apache Kafka, AWS, Apache Flink, Docker, K8s} \\
+    }}
+ \end{itemize}
+ 
+ %-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Belarusian State University of Informatics and Radioelectronics }{Minsk, BY}
+      {Bachelor}{Sep. 2013 -- Jun 2017}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
