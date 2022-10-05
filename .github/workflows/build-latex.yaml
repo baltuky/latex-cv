@@ -1,0 +1,53 @@
+name: 'Build LaTeX CV'
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update apt-get
+        run: sudo apt-get -qq update
+
+      - name: Install LaTeX packages
+        run: >-
+          sudo apt-get install -y --no-install-recommends
+          texlive-fonts-recommended 
+          texlive-latex-extra
+          texlive-fonts-extra 
+          poppler-utils 
+          texlive-latex-recommended
+
+      - name: Create _build directory
+        run: mkdir _build
+
+      - name: Build LaTeX (.pdf)
+        run: pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build cv.tex
+
+      - name: Create preview (.png)
+        run: pdftoppm _build/cv.pdf _build/preview -png -f 1 -singlefile
+
+      - name: Commit preview.png
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Yauheni Baltukha
+          author_email: evgenii.boltuho@gmail.com
+          message: 'Update preview.png'
+          add: '_build/preview.png'
+
+      - name: Commit cv.pdf
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Yauheni Baltukha
+          author_email: evgenii.boltuho@gmail.com
+          message: 'Update cv.pdf'
+          add: '_build/cv.pdf'
