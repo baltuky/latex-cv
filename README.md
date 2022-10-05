@@ -1,7 +1,7 @@
 A single-page, one-column resume for software engineers. 
 It uses the base LaTeX templates and fonts to provide ease of use and installation when trying to update the resume.
 
-[![Build Status](https://travis-ci.org/baltuky/latex-cv.svg?branch=master)](https://travis-ci.org/baltuky/latex-cv)
+![Build LaTeX](https://github.com/baltuky/latex-cv/actions/workflows/build-latex.yaml/badge.svg)
 
 ### Preview
 
