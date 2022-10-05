@@ -36,13 +36,16 @@ jobs:
       - name: Create preview (.png)
         run: pdftoppm _build/cv.pdf _build/preview -png -f 1 -singlefile
 
+      - name: Copy PDF and PNG files
+        run: cp _build/cv.pdf . && cp _build/preview.png .
+
       - name: Commit preview.png
         uses: EndBug/add-and-commit@v9
         with:
           author_name: Yauheni Baltukha
           author_email: evgenii.boltuho@gmail.com
           message: 'Update preview.png'
-          add: '_build/preview.png'
+          add: 'preview.png'
 
       - name: Commit cv.pdf
         uses: EndBug/add-and-commit@v9
@@ -50,4 +53,4 @@ jobs:
           author_name: Yauheni Baltukha
           author_email: evgenii.boltuho@gmail.com
           message: 'Update cv.pdf'
-          add: '_build/cv.pdf'
+          add: 'cv.pdf'
